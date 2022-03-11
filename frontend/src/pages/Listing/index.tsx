@@ -1,8 +1,16 @@
 import Pagination from "componentes/Pagination";
 import MovieCard from "componentes/MovieCard";
-
+import { BASE_URL } from "utils/requests";
+import axios from "axios";
 
 function Listing() {
+
+
+// FORMA ERADA
+    axios.get(`${BASE_URL}/movies?size-12$page=0`).them(response => {
+    console.log(response.data);
+        });
+
     return (
         <>
             <Pagination />

@@ -27,11 +27,15 @@ useEffect(() => {
         setPage(data);
     });
 }, [pageNumber]);
-// FORMA ERRADA
+
+
+    const handlePageChange = (newPageNumber : number) => {
+        setPageNumber(newPageNumber);
+    }
 
 return (
     <>
-        <Pagination />
+        <Pagination page={page} onChange={handlePageChange} />
         <div className="contain">
             <div className="row">
                 {page.content.map(movie => (
